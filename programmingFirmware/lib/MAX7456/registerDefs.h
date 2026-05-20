@@ -47,59 +47,14 @@
 #define OSDM_OSD_INSERTION_MUX_READ          (OSDM_OSD_INSERTION_MUX | READ_OFFSET)
 
 // Row Brightness Registers
-#define RB0_ROW_0_BRIGHTNESS                 0x10
-#define RB0_ROW_0_BRIGHTNESS_READ            (RB0_ROW_0_BRIGHTNESS | READ_OFFSET)
-
-#define RB1_ROW_1_BRIGHTNESS                 0x11
-#define RB1_ROW_1_BRIGHTNESS_READ            (RB1_ROW_1_BRIGHTNESS | READ_OFFSET)
-
-#define RB2_ROW_2_BRIGHTNESS                 0x12
-#define RB2_ROW_2_BRIGHTNESS_READ            (RB2_ROW_2_BRIGHTNESS | READ_OFFSET)
-
-#define RB3_ROW_3_BRIGHTNESS                 0x13
-#define RB3_ROW_3_BRIGHTNESS_READ            (RB3_ROW_3_BRIGHTNESS | READ_OFFSET)
-
-#define RB4_ROW_4_BRIGHTNESS                 0x14
-#define RB4_ROW_4_BRIGHTNESS_READ            (RB4_ROW_4_BRIGHTNESS | READ_OFFSET)
-
-#define RB5_ROW_5_BRIGHTNESS                 0x15
-#define RB5_ROW_5_BRIGHTNESS_READ            (RB5_ROW_5_BRIGHTNESS | READ_OFFSET)
-
-#define RB6_ROW_6_BRIGHTNESS                 0x16
-#define RB6_ROW_6_BRIGHTNESS_READ            (RB6_ROW_6_BRIGHTNESS | READ_OFFSET)
-
-#define RB7_ROW_7_BRIGHTNESS                 0x17
-#define RB7_ROW_7_BRIGHTNESS_READ            (RB7_ROW_7_BRIGHTNESS | READ_OFFSET)
-
-#define RB8_ROW_8_BRIGHTNESS                 0x18
-#define RB8_ROW_8_BRIGHTNESS_READ            (RB8_ROW_8_BRIGHTNESS | READ_OFFSET)
-
-#define RB9_ROW_9_BRIGHTNESS                 0x19
-#define RB9_ROW_9_BRIGHTNESS_READ            (RB9_ROW_9_BRIGHTNESS | READ_OFFSET)
-
-#define RB10_ROW_10_BRIGHTNESS               0x1A
-#define RB10_ROW_10_BRIGHTNESS_READ          (RB10_ROW_10_BRIGHTNESS | READ_OFFSET)
-
-#define RB11_ROW_11_BRIGHTNESS               0x1B
-#define RB11_ROW_11_BRIGHTNESS_READ          (RB11_ROW_11_BRIGHTNESS | READ_OFFSET)
-
-#define RB12_ROW_12_BRIGHTNESS               0x1C
-#define RB12_ROW_12_BRIGHTNESS_READ          (RB12_ROW_12_BRIGHTNESS | READ_OFFSET)
-
-#define RB13_ROW_13_BRIGHTNESS               0x1D
-#define RB13_ROW_13_BRIGHTNESS_READ          (RB13_ROW_13_BRIGHTNESS | READ_OFFSET)
-
-#define RB14_ROW_14_BRIGHTNESS               0x1E
-#define RB14_ROW_14_BRIGHTNESS_READ          (RB14_ROW_14_BRIGHTNESS | READ_OFFSET)
-
-#define RB15_ROW_15_BRIGHTNESS               0x1F
-#define RB15_ROW_15_BRIGHTNESS_READ          (RB15_ROW_15_BRIGHTNESS | READ_OFFSET)
+#define ROW_BRIGHTNESS                       0x10 // add the desired row integer to reach the correct memory address
+#define ROW_BRIGHTNESS_READ                  (ROW_BRIGHTNESS | READ_OFFSET) // add the desired row integer to reach the correct memory address
 
 // OSD Black Level
 #define OSDBL_OSD_BLACK_LEVEL                0x6C
 #define OSDBL_OSD_BLACK_LEVEL_READ           (OSDBL_OSD_BLACK_LEVEL | READ_OFFSET)
 
-// Special Function (Variable High Nibble)
-#define STAT_STATUS(base)                    ((base) | READ_OFFSET)     // AxH
-#define DMDO_DISPLAY_MEMORY_DATA_OUT(base)   ((base) | READ_OFFSET)     // BxH
-#define CMDO_CHARACTER_MEMORY_DATA_OUT(base) ((base) | READ_OFFSET)     // CxH
+// Special Functions
+#define STATUS                               0xA0
+#define DISPLAY_MEMORY_DATA_OUT              0xB0
+#define CMDO_CHARACTER_MEMORY_DATA_OUT       0xC0
