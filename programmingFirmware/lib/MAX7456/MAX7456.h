@@ -17,9 +17,10 @@ class MAX7456
             pinMode(cs, OUTPUT);
             digitalWrite(cs, HIGH);
             spi->begin();
+            return 0;
         }
 
-        uint8_t update();
+        uint8_t update(){return 0;};
 
         // =========================
         // STAT
@@ -250,6 +251,6 @@ class MAX7456
 
     private:
         SPIClass* spi;
-        SPISettings settings = SPISettings(50000, MSBFIRST, SPI_MODE1);
+        SPISettings settings = SPISettings(500, MSBFIRST, SPI_MODE1);
         uint8_t cs;
 };

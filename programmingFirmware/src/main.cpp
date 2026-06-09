@@ -1,24 +1,20 @@
 #include <Arduino.h>
 #include <MAX7456.h>
+#include <SPI.h>
 
-#define CS 12
-#define SCK 11
-#define MISO 10
-#define MOSI 9
+#define SCK 14
+#define MISO 12
+#define MOSI 11
+#define CS 10
 
 const char* CALLSIGN = "KV0R";
 
-
-
-
-
-SPIClass bus;
-MAX7456 max7456(&bus, CS);
+MAX7456 max7456(&SPI, CS);
 
 void setup() {
-    bus.setSCK(SCK);
-    bus.setMISO(MISO);
-    bus.setMOSI(MOSI);
+    SPI.setSCK(SCK);
+    SPI.setMISO(MISO);
+    SPI.setMOSI(MOSI);
 
     SerialUSB.begin(115200); while(!SerialUSB){};
     pinMode(LED_BUILTIN, OUTPUT); digitalWrite(LED_BUILTIN, HIGH);
