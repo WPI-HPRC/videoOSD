@@ -251,6 +251,6 @@ class MAX7456
 
     private:
         SPIClass* spi;
-        SPISettings settings = SPISettings(500, MSBFIRST, SPI_MODE1);
+        SPISettings settings = SPISettings(5, MSBFIRST, SPI_MODE1);
         uint8_t cs;
 };
