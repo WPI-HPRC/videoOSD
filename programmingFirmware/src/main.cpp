@@ -8,7 +8,7 @@ void setup() {
   SPI.begin();
 
   osd.init();
-  osd.setDisplayOffsets(40, 16); // defined from just looking at it
+  osd.setDisplayOffsets(36, 15); // defined from just looking at it
 
   osd.activateOSD();
   // page 19 of the datasheet
