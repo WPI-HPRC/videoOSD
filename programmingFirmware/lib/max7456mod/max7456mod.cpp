@@ -1,4 +1,4 @@
-#include "max7456.h"
+#include "max7456mod.h"
 #include <Arduino.h>
 #include <SPI.h>
 
@@ -320,7 +320,7 @@ void Max7456::init() {
   _regVm0.bits.softwareResetBit = 1;
   spidevice->transfer(_regVm0.whole);
   digitalWrite(_pinCS, HIGH);
-  delay(500);
+  // delay(500);
 
   digitalWrite(_pinCS, LOW);
   for (int x = 0; x < 16; x++) {
