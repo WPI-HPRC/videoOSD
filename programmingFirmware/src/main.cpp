@@ -30,6 +30,16 @@ void setup() {
 
   SPI.transfer(0xA0);
   SerialUSB.println(SPI.transfer(0x00), 2);
+
+
+  delay(5000);
+
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  digitalWrite(3, HIGH); digitalWrite(4, HIGH);
+  digitalWrite(3, LOW); digitalWrite(4, LOW);
+  delay(300);
+  digitalWrite(3, HIGH); digitalWrite(4, HIGH);
 }
 
 void loop() {}
